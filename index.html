@@ -8,6 +8,7 @@
 <script type="text/javascript">
 	function sendEmail() {
         var a = document.getElementById('nam').value
+        var b = document.getElementById('rnam').value
        	Email.send({
 		Host: "smtp.elasticemail.com",
 		Username: "anu0911@gmail.com",
@@ -15,10 +16,10 @@
 		To: 'anupama.vijayasekar@ironbow.com',
 		From: "anu0911@gmail.com",
 		Subject: "Sending Email using javascript",
-		Body: "Issue on the Codec is " + a,
+		Body: "Device located at " + b + " reported with issue: " + a,
 	})
 		.then(function (message) {
-		alert("mail sent successfully")
+		alert("Your issue has been reported successfully to MIS.Our technicians will work on it shortly ")
 		});
 	}
 </script>
@@ -26,8 +27,9 @@
 
 <body>
 <form method="get|post">
-         Codec Problem:<br> <input type="text" name="nam" id="nam">
-         <input type="button" value="Send Email"
+         Codec Problem:<br> <input type="text" name="nam" id="nam"> <br>
+         Room Name :<br> <input type="text" name="rname" id="rnam"> <br>
+         <br> <input type="button" value="Report Problem to HelpDesk"
 		onclick="sendEmail()" />
 </form>
 </body>
