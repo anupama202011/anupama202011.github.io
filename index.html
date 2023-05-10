@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html>
 <head>
 <title>Send Mail</title>
 <script src=
@@ -8,14 +7,15 @@
 
 <script type="text/javascript">
 	function sendEmail() {
-	Email.send({
+        var a = document.getElementById('nam').value
+       	Email.send({
 		Host: "smtp.elasticemail.com",
 		Username: "anu0911@gmail.com",
 		Password: "48CA077A7C2CAE00E1DEEF63CDF2320A4C21",
 		To: 'anupama.vijayasekar@ironbow.com',
 		From: "anu0911@gmail.com",
 		Subject: "Sending Email using javascript",
-		Body: "Elastic SMTP did the trick :-))!!",
+		Body: "Issue on the Codec is " + a,
 	})
 		.then(function (message) {
 		alert("mail sent successfully")
@@ -25,9 +25,11 @@
 </head>
 
 <body>
-<form method="post">
-	<input type="button" value="Send Email"
+<form method="get|post">
+         Codec Problem:<br> <input type="text" name="nam" id="nam">
+         <input type="button" value="Send Email"
 		onclick="sendEmail()" />
 </form>
 </body>
 </html>
+
