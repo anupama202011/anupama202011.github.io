@@ -85,13 +85,7 @@
       </div>
       <div>
         <button @click="back" x-show="step === 'moreinfo'">Back</button>
-        <button
-          @click="sendEmail()"
-          :class="busy ? 'busy' : ''"
-          :disabled="busy"
-          x-text="busy ? 'Send' : 'Send'"
-          class="submit"
-        ></button>
+        <button type="button" class="pill turquoise" onclick="sendEmail()">Send</button>
       </div>
     </section>
     <section
