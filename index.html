@@ -14,10 +14,14 @@
   <script src="alpine.js" defer></script>
 
 <script type="text/javascript">
+        const params = new URLSearchParams(location.search);
+        const roomName = params.get('roomname');
+        const device = params.get('device');
+        console.log(roomName,device)
 	function sendEmail() {
         var a = document.getElementById('nam').value
         var b = document.getElementById('rnam').value
-       	Email.send({
+        Email.send({
 		Host: "smtp.elasticemail.com",
 		Username: "anu0911@gmail.com",
 		Password: "48CA077A7C2CAE00E1DEEF63CDF2320A4C21",
