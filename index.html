@@ -78,10 +78,10 @@
       x-transition:leave="fadeup"
     >
       <div>
-        <textarea x-model="answers.comments" placeholder="Describe the problem"></textarea>
+        <textarea x-model="answers.comments" placeholder="Describe the problem" id="nam"> </textarea>
       </div>
       <div>
-        <input class="name" x-model="answers.name" placeholder="Your name here" />
+        <input class="name" x-model="answers.name" placeholder="Your name here" id="rnam" />
       </div>
       <div>
         <button @click="back" x-show="step === 'moreinfo'">Back</button>
