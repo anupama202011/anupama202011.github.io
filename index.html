@@ -17,8 +17,7 @@
         const params = new URLSearchParams(location.search);
         const roomName = params.get('roomname');
         const device = params.get('device');
-        console.log(roomName,device)
-	function sendEmail() {
+        function sendEmail() {
         var a = document.getElementById('nam').value
         var b = document.getElementById('rnam').value
         Email.send({
@@ -28,7 +27,7 @@
 		To: 'anu.vijayasekar@ironbow.com',
 		From: "anu0911@gmail.com",
 		Subject: "Codec Issue reported in Conference Room " + roomName,
-		Body: "Hello\nDescription of Problem",
+		Body: "Hello" + "\r\n" + "Description of Problem",
 	})
 		.then(function (message) {
 		alert("Your issue has been reported successfully to MIS.Our technicians will work on it shortly ")
